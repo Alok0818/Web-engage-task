@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey</title>
+    <style>
+      /* Add styles for the thank you message */
+      .thank-you-message {
+        /* display: flex;
+        flex-direction: column;
+        align-items: center; */
+        padding: 20px;
+
+        /* border: 1px solid red; */
+        width: 60%;
+        margin: auto;
+        margin-top: 10%;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;        text-align: center;
+        background-color: antiquewhite;
+
+      }
+
+      button{
+        width: 100px;
+        height: 40px;
+        font-size: 20px;
+        color: white;
+        border: transparent;
+        background-color: rgb(51, 205, 205);
+        border-radius: 5px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+      }
+
+      button:hover{
+        background-color: teal;
+        cursor: pointer;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="thank-you-message">
+      <h1>
+        Thanks a ton for taking out your precious time and for completing the
+        survey
+      </h1>
+      <p>Email Address 🡪 <span id="email"></span></p>
+      <p>Contact Number 🡪 <span id="mobile"></span></p>
+      <a href="index.html"><button>Go Back</button></a>
+    </div>
+
+    <script>
+      // Display the email and mobile data on the thank you page
+      const email = document.querySelector("#email");
+      const mobile = document.querySelector("#mobile");
+      const queryString = new URLSearchParams(location.search);
+
+      email.textContent = queryString.get("email");
+      mobile.textContent =
+        queryString.get("countryCode") + "-" + queryString.get("mobile");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .error-message{
+        color: red;
+      }
+
+      .main {
+        display: flex;
+        width: 100%;
+        height: 100%;
+
+        /* border: 2px solid red; */
+      }
+
+      .image-section {
+        width: 50%;
+        height: 100%;
+        /* border: 2px solid red; */
+      }
+
+      .form-section {
+        width: 50%;
+        height: 100%;
+        /* padding-left: 50px;
+        padding-right: 50px; */
+        /* border: 2px solid red; */
+      }
+
+      .form-section > div {
+        /* border: 2px solid red; */
+        width: 80%;
+        margin: auto;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      #logo-img {
+        /* border: 2px solid red; */
+        width: 80%;
+        margin: auto;
+        margin-top: 70px;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 60px;
+        margin-top: 0px;
+        font-weight: bolder;
+      }
+
+      h3 {
+        font-size: 30px;
+        margin-top: -30px;
+        font-weight: bolder;
+      }
+
+      .form-field {
+        /* border: 2px solid red; */
+        width: 80%;
+        margin: auto;
+      }
+
+      #email {
+        width: 90%;
+        height: 30px;
+        padding: 10px;
+        font-size: 20px;
+      }
+
+      .input-box2 {
+        margin-top: 20px;
+        height: 50px;
+      }
+
+      #country-code {
+        width: 15%;
+        height: 48px;
+        font-size: 20px;
+        padding-left: 10px;
+        /* border: transparent; */
+      }
+
+      #mobile {
+        width: 74%;
+        height: 42px;
+        font-size: 20px;
+        padding-left: 20px;
+        /* border: transparent; */
+      }
+
+      .button {
+        margin-top: 30px;
+        width: 95%;
+        height: 42px;
+        border: transparent;
+        color: white;
+        background-color: black;
+        font-size: 20px;
+        font-weight: bolder;
+      }
+
+      .button:hover {
+        cursor: pointer;
+        color: black;
+        background-color: rgb(158, 152, 152);
+        font-weight: bolder;
+      }
+
+      @media (max-width: 600px) {
+        /* styles for screens smaller than 600px */
+
+        body,
+        html {
+          font-size: 14px;
+        }
+        .main {
+          flex-direction: column;
+        }
+
+        .form-field {
+          /* border: 2px solid red; */
+          width: 100%;
+          margin: auto;
+        }
+
+        .image-section {
+          width: 100%;
+          height: 50%;
+          /* border: 1px solid red; */
+        }
+
+        img {
+          width: 100%;
+          height: 80%;
+        }
+
+        .form-section {
+          width: 100%;
+          height: 50%;
+          margin-top: -60px;
+        }
+
+        #logo-img {
+          /* border: 2px solid red; */
+          width: 80%;
+          margin: auto;
+          text-align: center;
+        }
+
+        #logo-img > img {
+          width: 65%;
+        }
+
+        h1 {
+          font-size: 40px;
+          margin-top: 0px;
+          font-weight: bolder;
+        }
+
+        h3 {
+          font-size: 25px;
+          /* margin-top: -30px; */
+          font-weight: bolder;
+        }
+
+        #email {
+          width: 90%;
+          height: 30px;
+          padding: 10px;
+          font-size: 14px;
+        }
+
+        .input-box2 {
+          height: 50px;
+        }
+
+        #country-code {
+          width: 20%;
+          height: 48px;
+          font-size: 14px;
+          padding-left: 10px;
+          /* border: transparent; */
+        }
+
+        #mobile {
+          width: 68%;
+          height: 42px;
+          font-size: 14px;
+          padding-left: 20px;
+          /* border: transparent; */
+        }
+
+        .button {
+          width: 98%;
+        }
+
+        .button:hover {
+          cursor: pointer;
+          color: black;
+          background-color: rgb(158, 152, 152);
+          font-weight: bolder;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="image-section">
+        <img src="/assests/Enage-image.png" alt="image" />
+      </div>
+      <div class="form-section">
+        <div id="logo-img">
+          <img src="/assests/logo.jpg" alt="image" />
+          <h1>Get a FREE</h1>
+          <h3>consultation with an expert</h3>
+        </div>
+        <div>
+          <form class="survey-form">
+            <div class="form-field">
+              <input
+                type="text"
+                id="email"
+                required
+                placeholder="Enter your email"
+              />
+              <div class="error-message" id="email-error"></div>
+            </div>
+            <div class="form-field">
+              <div class="input-box2">
+                <select id="country-code" required>
+                  <option value="">---</option>
+                  <option value="+83">+83</option>
+                  <option value="+44">+44</option>
+                  <option value="+91">+91</option>
+                  <!-- Add more country code options -->
+                </select>
+                <span>
+                  <input
+                    type="number"
+                    id="mobile"
+                    required
+                    placeholder="Enter your mobile"
+                  />
+                </span>
+              </div>
+              <div class="error-message" id="mobile-error"></div>
+            </div>
+            <div class="form-field">
+              <input class="button" type="submit" value="TALK TO US 🡪" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Add JavaScript for form validation
+      const form = document.querySelector(".survey-form");
+      const email = document.querySelector("#email");
+      const mobile = document.querySelector("#mobile");
+      const countryCode = document.querySelector("#country-code");
+      const emailError = document.querySelector("#email-error");
+      const mobileError = document.querySelector("#mobile-error");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Validate email
+        const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegEx.test(email.value) || email.value.length < 5) {
+          emailError.textContent = "You have entered an invalid email address";
+          return;
+        } else {
+          emailError.textContent = "";
+        }
+
+        // Validate mobile
+        if (mobile.value.length !== 10) {
+          mobileError.textContent = "You have entered an invalid Mobile number";
+          return;
+        } else {
+          mobileError.textContent = "";
+        }
+
+        // Render the second page of the survey
+        location.href =
+          "thank-you.html?email=" +
+          email.value +
+          "&mobile=" +
+          mobile.value +
+          "&countryCode=" +
+          countryCode.value;
+      });
+
+      function clearInputFields() {
+        const input1 = document.getElementById("email");
+        const input2 = document.getElementById("country-code");
+        const input3 = document.getElementById("mobile");
+        input1.value = "";
+        input2.value = "";
+        input3.value = "";
+      }
+
+      window.addEventListener("beforeunload", clearInputFields);
+    </script>
+  </body>
+</html>
